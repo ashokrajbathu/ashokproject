@@ -1,1 +1,0 @@
-Websoc- Tecruitr readme
