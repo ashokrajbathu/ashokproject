@@ -101,7 +101,7 @@ module.exports = function (grunt) {
         files: [
           'server/**/*.{js,json}'
         ],
-        tasks: ['express:dev', 'wait'],
+        tasks: ['express:prod', 'wait'],
         options: {
           livereload: true,
           nospawn: true //Without this option specified express won't be reloaded
@@ -267,7 +267,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.client %>/assets/images',
-          src: '{,*/}*.{png,jpg,jpeg,gif}',
+          src: '[{,*/}*.{png,jpg,jpeg,gif}]',
           dest: '<%= yeoman.dist %>/public/assets/images'
         }]
       }
@@ -540,7 +540,7 @@ module.exports = function (grunt) {
       'injector',
       'wiredep',
       'autoprefixer',
-      'express:dev',
+      'express:prod',
       'wait',
       'open',
       'watch'
@@ -581,7 +581,7 @@ module.exports = function (grunt) {
         'injector',
         'wiredep',
         'autoprefixer',
-        'express:dev',
+        'express:prod',
         'protractor'
       ]);
     }
