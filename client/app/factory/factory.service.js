@@ -27,8 +27,8 @@ angular.module('shopnxApp')
   .factory('SortOptions', [function() {
     var obj = {};
     obj.server= [
-       {name:'Low Percentage', val:{'variants.price':1}},
-       {name:'Hign Percentage', val:{'variants.price':-1}},
+       {name:'Low Percentile', val:{'variants.price':1}},
+       {name:'Hign Percentile', val:{'variants.price':-1}},
        {name:'Name (A-Z)', val:{'name':1}},
        {name:'Name (Z-A)', val:{'name':-1}}
     ];
