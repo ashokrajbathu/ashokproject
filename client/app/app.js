@@ -64,7 +64,7 @@ angular.module('shopnxApp', [
     });
 
     $rootScope.$on('$stateChangeSuccess', function (evt, toState) {
-        window.document.title = toState.title + ' - Websoc';
+        window.document.title = toState.title + ' - Tecruitr';
     });
 
     $rootScope.spinner = {

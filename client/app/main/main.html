@@ -173,12 +173,12 @@
                                 <tr>
                                     <th ts-criteria="id">ID</th>
                                     <th ts-criteria="name">Name</th>
-                                    <th ts-criteria="active">Percentage</th>
+                                    <th ts-criteria="active">Percentile</th>
                                     <th ts-criteria="active">Shortlist</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="p in products.items" id="{{p._id}}" animate-on-change='p.price+p.quantity+p.packing+p.name' ng-animate="'animate'" ts-repeat>
+                                <tr ng-repeat="p in products.items | orderBy : '-p.variants[0].price'" id="{{p._id}}" animate-on-change='p.price+p.quantity+p.packing+p.name' ng-animate="'animate'" ts-repeat>
                                     <!-- <td><img src="images/{{p.category}}/{{p.image}}"/> </td>--><td>{{$index+1}}</td><td><a ui-sref="productDetail({id:p._id, slug:p.slug})">{{p.name}}</a></td>
                                     <td>
                                     <p class="price"><del ng-if="p.variants[0].price!=p.variants[0].mrp">{{p.variants[0].mrp}}</del> {{p.variants[0].price}}</p>
