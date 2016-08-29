@@ -1,0 +1,209 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title></title>
+    <meta name="description" content="ShopNX is a Shopping cart application using AngularJS, NodeJS, MongoDB, Express. A whole ecommerce website as a single page web application which provides fastest shopping experience">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="app/0eb1becb.vendor.css">
+    <link rel="stylesheet" href="app/8cabbe67.app.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'>
+  </head>
+  <body ng-app="shopnxApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+
+    <div ng-include="'components/navbar/navbar.html'"></div>
+    <div id="all">
+
+      <div id="content">
+          <div class="container">
+
+    <div ui-view=""></div>
+  </div>
+  <!-- /.container -->
+</div>
+<!-- /#content -->
+
+            <!-- *** FOOTER ***
+     _________________________________________________________ -->
+            <div id="footer" data-animate="fadeInUp">
+                <div class="container">
+                        <div class="col-md-3 col-sm-6">
+                            <h4>Pages</h4>
+
+                            <ul>
+                                <li><a href="/">About us</a>
+                                </li>
+                                <li><a href="/">Terms and conditions</a>
+                                </li>
+                                <li><a href="/">FAQ</a>
+                                </li>
+                                <li><a href="/contact">Contact us</a>
+                                </li>
+                            </ul>
+
+                            <hr>
+
+                            <h4>User section</h4>
+
+                            <ul>
+                                <li><a href="/login">Login</a>
+                                </li>
+                                <li><a href="/signup">Sign Up</a>
+                                </li>
+                            </ul>
+
+                            <hr class="hidden-md hidden-lg hidden-sm">
+
+                        </div>
+                        <!-- /.col-md-3 -->
+
+                        <div class="col-md-3 col-sm-6">
+
+                            <h4>Trending Technologies</h4>
+
+                            <h5>Computer Science</h5>
+
+                            <ul>
+                                <li><a href="/">Java</a>
+                                </li>
+                                <li><a href="/">Python</a>
+                                </li>
+                                <li><a href="/">C</a>
+                                </li>
+                            </ul>
+
+                            <h5>Electronics</h5>
+                            <ul>
+                                <li><a href="/">Embeded systems</a>
+                                </li>
+                                <li><a href="/">Micro Controller</a>
+                                </li>
+                                <li><a href="/">PLC</a>
+                                
+                            </ul>
+
+                            <hr class="hidden-md hidden-lg">
+
+                        </div>
+                        <!-- /.col-md-3 -->
+
+                        <div class="col-md-3 col-sm-6">
+
+                            <h4>Where to find us</h4>
+
+                            <p><strong>Tecruitr</strong>
+                                <br>Vel tech university
+                                <br>Chennai
+                                <br>tamilnadu
+                                
+                                <strong>India</strong>
+                            </p>
+
+                            <a href="/contact">Go to contact page</a>
+
+                            <hr class="hidden-md hidden-lg">
+
+                        </div>
+                        <!-- /.col-md-3 -->
+
+
+
+                        <div class="col-md-3 col-sm-6">
+
+                            <h4>Get the news</h4>
+
+                            <p class="text-muted"></p>
+
+                            <form>
+                                <div class="input-group">
+
+                                    <input type="text" class="form-control">
+
+                                    <span class="input-group-btn">
+
+    			    <button class="btn btn-default" type="button">Subscribe!</button>
+
+    			</span>
+
+                                </div>
+                                <!-- /input-group -->
+                            </form>
+
+                            <hr>
+
+                            <h4>Stay in touch</h4>
+
+                            <p class="social">
+                                <a href="https://www.facebook.com/" class="facebook external" data-animate-hover="shake"><i class="fa fa-facebook"></i></a>
+                                <a href="https://twitter.com/" class="twitter external" data-animate-hover="shake"><i class="fa fa-twitter"></i></a>
+                                <a href="https://instagram.com/" class="instagram external" data-animate-hover="shake"><i class="fa fa-instagram"></i></a>
+                                <a href="#" class="gplus external" data-animate-hover="shake"><i class="fa fa-google-plus"></i></a>
+                                <a href="#" class="email external" data-animate-hover="shake"><i class="fa fa-envelope"></i></a>
+                            </p>
+
+
+                        </div>
+                        <!-- /.col-md-3 -->
+
+                </div>
+                <!-- /.container -->
+            </div>
+            <!-- /#footer -->
+
+            <!-- *** FOOTER END *** -->
+
+
+
+
+            <!-- *** COPYRIGHT ***
+     _________________________________________________________ -->
+            <div id="copyright">
+                <div class="container">
+                    <div class="col-md-6">
+                        <p class="pull-left">© 2016 Websoc.&nbsp;&nbsp;Developed by <a href="http://addtrix.com">Websoc</a> Team. </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- /#all -->
+        <!--Stripe payment -->
+        <!-- <script src="js/jquery.form.js"></script>
+        <script src="js/jquery.blockUI.js"></script> -->
+        <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="pk_test_srKHaSHynBIVLX03r33xLszb"
+        data-name="ShopNx"
+        data-description="2 widgets"
+        data-amount="2000"
+        data-locale="auto">
+        </script>
+        <!--Stripe payment -->
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+     
+
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <script src="app/11105541.vendor.js"></script>
+
+
+        <script src="app/895a1d52.app.js"></script>
+</body>
+</html>
