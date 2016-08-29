@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('shopnxApp')
-  .controller('SignupCtrl', function ($scope, Auth, $location, $window) {
+  .controller('SignupEmpCtrl', function ($scope, Auth, $location, $window) {
     $scope.user = {};
     $scope.errors = {};
 
@@ -13,12 +13,11 @@ angular.module('shopnxApp')
           name: $scope.user.name,
           lastname:$scope.user.lastname,
           mobile:$scope.user.mobile,
-          degree:$scope.user.degree,
-          branch:$scope.user.branch,
-          collegename:$scope.user.collegename,
-          yearofpass:$scope.user.yearofpass,
+          
+          companyname:$scope.user.companyname,
+          
           email: $scope.user.email,
-          role:"user",
+          role:"employer",
           password: $scope.user.password
         })
         .then( function() {

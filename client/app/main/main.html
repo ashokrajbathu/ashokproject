@@ -179,11 +179,12 @@
                             </thead>
                             <tbody>
                                 <tr ng-repeat="p in products.items | orderBy : '-p.variants[0].price'" id="{{p._id}}" animate-on-change='p.price+p.quantity+p.packing+p.name' ng-animate="'animate'" ts-repeat>
-                                    <!-- <td><img src="images/{{p.category}}/{{p.image}}"/> </td>--><td>{{$index+1}}</td><td><a ui-sref="productDetail({id:p._id, slug:p.slug})">{{p.name}}</a></td>
+                                    <!-- <td><img src="images/{{p.category}}/{{p.image}}"/> </td>--><td>{{$index+1}}</td><td><a ui-sref="productDetail({id:p._id, slug:p.slug})">{{p.tecid}}</a></td>
                                     <td>
-                                    <p class="price"><del ng-if="p.variants[0].price!=p.variants[0].mrp">{{p.variants[0].mrp}}</del> {{p.variants[0].price}}</p>
+                                    <p class="price"><del ng-if="p.variants[0].price!=p.variants[0].mrp">{{p.variants[0].mrp}}</del> {{p.features[0].score}}</p>
                                     </td>
-                                    <td><a ng-click="" ng-show="checkCart(p._id)" class="btn btn-primary"><i class="fa fa-list"></i>Shortlist</a></td>
+                                    <td> 
+                                    <a ng-hide="checkCart(p._id)" class="btn btn-default">Shortlisted</a><a ng-click="cart.addItem(p._id, p.name, p.slug, p.variants[0].mrp, p.variants[0].price,true);" ng-show="checkCart(p._id)" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Shortlist</a></td>
                                 </tr>
                             </tbody>
                             </table>

@@ -1,0 +1,106 @@
+<div class="container">
+  <div class="row">
+  <!--  <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="box">
+      <h1>Hello {{ getCurrentUser().name }}</h1>
+      
+    </div>
+  </div>
+  <div class="col-md-3"></div>-->
+
+
+     <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="box" ng-show="getCurrentUser().role == 'user'">
+            <h1>Hello {{ getCurrentUser().name}}</h1>
+            <table class="table">
+              
+              <tbody>
+                <tr>
+                  <th>Name</th>
+                  <td>{{getCurrentUser().name}} {{ getCurrentUser().lastname }}</td>
+                </tr>
+                <tr>
+                  <th>Tecruiter Id</th>
+                  <td>{{ getCurrentUser().tecid }}</td>
+                </tr>
+                <tr>
+                  <th>Mobile Number</th>
+                  <td>{{ getCurrentUser().mobile }}</td>
+                </tr>
+                <tr>
+                  <th>Email</th>
+                  <td>{{ getCurrentUser().email }}</td>
+                </tr>
+                <tr>
+                  <th>Degree</th>
+                  <td>{{ getCurrentUser().degree }}</td>
+                </tr>
+                <tr>
+                  <th>Branch</th>
+                  <td>{{ getCurrentUser().branch }}</td>
+                </tr>
+                <tr>
+                  <th>College</th>
+                  <td>{{ getCurrentUser().collegename }}</td>
+                </tr>
+                <tr>
+                  <th>Passed out in</th>
+                  <td>{{ getCurrentUser().yearofpass }}</td>
+                </tr>
+                
+                
+                
+              </tbody>
+            </table>
+             
+        </div>
+        <div class="box" ng-show="getCurrentUser().role == 'employer'">
+            <h1>Hello {{ getCurrentUser().name}}</h1>
+            <table class="table">
+              
+              <tbody>
+                <tr>
+                  <th>Name</th>
+                  <td>{{getCurrentUser().name}} {{ getCurrentUser().lastname }}</td>
+                </tr>
+                <tr>
+                  <th>Tecruiter Id</th>
+                  <td>{{ getCurrentUser().tecid }}</td>
+                </tr>
+                <tr>
+                  <th>Mobile Number</th>
+                  <td>{{ getCurrentUser().mobile }}</td>
+                </tr>
+                <tr>
+                  <th>Email</th>
+                  <td>{{ getCurrentUser().email }}</td>
+                </tr>
+                <tr>
+                  <th>Degree</th>
+                  <td>{{ getCurrentUser().degree }}</td>
+                </tr>
+                <tr>
+                  <th>Branch</th>
+                  <td>{{ getCurrentUser().branch }}</td>
+                </tr>
+                <tr>
+                  <th>College</th>
+                  <td>{{ getCurrentUser().collegename }}</td>
+                </tr>
+                <tr>
+                  <th>Passed out in</th>
+                  <td>{{ getCurrentUser().yearofpass }}</td>
+                </tr>
+                
+                
+                
+              </tbody>
+            </table>
+             
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+</div>

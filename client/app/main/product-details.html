@@ -50,7 +50,7 @@ _________________________________________________________ -->
           <div class="row" id="productMain">
               <div class="col-sm-3">
                   <div id="mainImage">
-                      <img src="/assets/clothing/{{product.variants[0].image}}" err-src="/assets/images/photo.png" alt="{{product.name}}" class="img-responsive">
+                      <img src="/assets/clothing/{{product.variants[0].image}}" err-src="/assets/images/photo.png" alt="{{product.email}}" class="img-responsive">
                   </div>
 
                  <!-- <div class="ribbon sale">
@@ -68,8 +68,50 @@ _________________________________________________________ -->
               </div>
               <div class="col-sm-9">
                   <div class="box">
-                      <h1 class="text-center">{{product.name}}</h1>
-                      <p class="goToDescription"><a href="#details" class="scroll-to">Scroll to  details</a>
+                      <h1 class="text-center">{{product.user.name}}</h1>
+
+            <table class="table">
+              
+              <tbody>
+                <tr>
+                  <th>Full Name</th>
+                  <td>{{product.user.name}} {{ product.user.lastname }}</td>
+                </tr>
+                <tr>
+                  <th>Tecruiter Id</th>
+                  <td>{{ product.user.tecid }}</td>
+                </tr>
+                <tr>
+                  <th>Mobile Number</th>
+                  <td>{{ product.user.mobile }}</td>
+                </tr>
+                <tr>
+                  <th>Email</th>
+                  <td>{{ product.user.email }}</td>
+                </tr>
+                <tr>
+                  <th>Degree</th>
+                  <td>{{ product.user.degree }}</td>
+                </tr>
+                <tr>
+                  <th>Branch</th>
+                  <td>{{ product.user.branch }}</td>
+                </tr>
+                <tr>
+                  <th>College</th>
+                  <td>{{ product.user.collegename }}</td>
+                </tr>
+                <tr>
+                  <th>Passed out in</th>
+                  <td>{{ product.user.yearofpass }}</td>
+                </tr>
+                
+                
+                
+              </tbody>
+            </table>
+             
+                      <p class="goToDescription"><a href="#details" class="scroll-to">Scroll to details</a>
                       </p>
                       <!--<p class="price"><del class="text-muted" ng-if="product.variants[0].price!=product.variants[0].mrp" >${{product.variants[i].mrp}}</del>&nbsp;${{product.variants[i].price}}</p>-->
 
@@ -84,7 +126,7 @@ _________________________________________________________ -->
 
                         <a ng-click="cart.addItem(product._id, product.name, product.slug, product.variants[0].mrp, product.variants[0].price, +1)" ng-hide="checkCart(product._id)" class="btn btn-primary">+</a>
                         </div>-->
-                        <a ng-click="cart.addItem(product._id, product.name, product.slug, product.variants[0].mrp, product.variants[0].price, 1, product.variants[0].image,product.category, product.variants[0].size ,true);" ng-show="checkCart(product._id)" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Shortlist</a>
+                        <a ng-click="cart.addItem(product._id, product.user.name,);" ng-show="checkCart(product._id)" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Shortlist</a>
                       </div>
 
                   </div></div>

@@ -3,14 +3,24 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var crypto = require('crypto');
+var shortid = require('shortid');
+shortid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
 var authTypes = ['github', 'twitter', 'facebook', 'google'];
 
 var UserSchema = new Schema({
   name: String,
+  lastname: String,
+  mobile: String,
   email: { type: String, lowercase: true },
-  role: {
+  degree: String,
+  companyname:String,
+  branch: String,
+  collegename: String,
+  yearofpass: String,
+  role: String,
+  tecid: {
     type: String,
-    default: 'user'
+    'default': shortid.generate
   },
   hashedPassword: String,
   provider: String,

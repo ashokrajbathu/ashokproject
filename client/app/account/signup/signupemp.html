@@ -5,15 +5,27 @@
         <div class="box">
             <h1>New account</h1>
 
-            <p>Are you an Employer? <a href="/signupemp">Signup here</a> </p>
+            <p class="lead">Not our registered user yet?</p>
+            <p></p>
             <p class="text-muted">If you have any questions, please feel free to <a href="/contact">contact us</a>, our customer service center is working for you 24/7.</p>
 
             <hr>
 
             <form ng-submit="register(form)" novalidate name="form">
+              
+              <div class="form-group" ng-class="{ 'has-success': form.companyname.$valid && submitted,
+                                                  'has-error': form.companyname.$invalid && submitted }">
+                <label>Company Name</label>
+
+                <input type="text" name="name" class="form-control" ng-model="user.companyname"
+                       required placeholder="Your company name"/>
+                <p class="help-block" ng-show="form.companyname.$error.required && submitted">
+                 Company name is required
+                </p>
+              </div>
               <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
                                                   'has-error': form.name.$invalid && submitted }">
-                <label>First Name</label>
+                <label>First Name of primary contact</label>
 
                 <input type="text" name="name" class="form-control" ng-model="user.name"
                        required placeholder="Your First name"/>
@@ -23,7 +35,7 @@
               </div>
               <div class="form-group" ng-class="{ 'has-success': form.lastname.$valid && submitted,
                                                   'has-error': form.lastname.$invalid && submitted }">
-                <label>Last Name</label>
+                <label>Last Name of primary contact</label>
 
                 <input type="text" name="lastname" class="form-control" ng-model="user.lastname"
                        required placeholder="Your Last name"/>
@@ -44,7 +56,7 @@
 
               <div class="form-group" ng-class="{ 'has-success': form.email.$valid && submitted,
                                                   'has-error': form.email.$invalid && submitted }">
-                <label>Email</label>
+                <label>work mail Id</label>
 
                 <input type="email" name="email" class="form-control" ng-model="user.email"
                        required
@@ -59,48 +71,6 @@
                   {{ errors.email }}
                 </p>
               </div>
-              <div class="form-group" ng-class="{ 'has-success': form.degree.$valid && submitted,
-                                                  'has-error': form.degree.$invalid && submitted }">
-                <label>Degree</label>
-
-                <input type="text" name="degree" class="form-control" ng-model="user.degree"
-                       required placeholder="B.Tech/M.Tech/BCA/MCA"/>
-                <p class="help-block" ng-show="form.degree.$error.required && submitted">
-                  Degree is required
-                </p>
-              </div>
-              
-              <div class="form-group" ng-class="{ 'has-success': form.branch.$valid && submitted,
-                                                  'has-error': form.branch.$invalid && submitted }">
-                <label>Branch/Program</label>
-
-                <input type="text" name="branch" class="form-control" ng-model="user.branch"
-                       required placeholder="Your Branch/program"/>
-                <p class="help-block" ng-show="form.branch.$error.required && submitted">
-                  Branch/Program is required
-                </p>
-              </div>
-              <div class="form-group" ng-class="{ 'has-success': form.collegename.$valid && submitted,
-                                                  'has-error': form.collegename.$invalid && submitted }">
-                <label> Latest College/University Name</label>
-
-                <input type="text" name="collegename" class="form-control" ng-model="user.collegename"
-                       required placeholder="Your College/Uiversity name"/>
-                <p class="help-block" ng-show="form.collegename.$error.required && submitted">
-                  College/University Name is required
-                </p>
-              </div>
-              <div class="form-group" ng-class="{ 'has-success': form.yearofpass.$valid && submitted,
-                                                  'has-error': form.yearofpass.$invalid && submitted }">
-                <label> Passed out year</label>
-
-                <input type="text" name="yearofpass" class="form-control" ng-model="user.yearofpass"
-                       required placeholder="Passed out year"/>
-                <p class="help-block" ng-show="form.yearofpass.$error.required && submitted">
-                  Passed out year is required
-                </p>
-              </div>
-
               <div class="form-group" ng-class="{ 'has-success': form.password.$valid && submitted,
                                                   'has-error': form.password.$invalid && submitted }">
                 <label>Password</label>
