@@ -179,7 +179,7 @@
                             </thead>
                             <tbody>
                                 <tr ng-repeat="p in products.items | orderBy : '-p.variants[0].price'" id="{{p._id}}" animate-on-change='p.price+p.quantity+p.packing+p.name' ng-animate="'animate'" ts-repeat>
-                                    <!-- <td><img src="images/{{p.category}}/{{p.image}}"/> </td>--><td>{{$index+1}}</td><td><a ui-sref="productDetail({id:p._id, slug:p.slug})">{{p.tecid}}</a></td>
+                                    <!-- <td><img src="images/{{p.category}}/{{p.image}}"/> </td>--><td>{{$index+1}}</td><td><a ui-sref="productDetail({id:p._id, slug:p.slug})">{{p.user.name}}</a></td>
                                     <td>
                                     <p class="price"><del ng-if="p.variants[0].price!=p.variants[0].mrp">{{p.variants[0].mrp}}</del> {{p.features[0].score}}</p>
                                     </td>

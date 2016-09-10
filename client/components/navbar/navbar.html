@@ -12,42 +12,36 @@ _________________________________________________________ -->
               <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}"><a href="/login">Login</a></li>
               <li ng-show="isLoggedIn()"><a href="/">Leaderboard</a>
                 </li>
-              <li ng-show="isLoggedIn()"><a href="">Hello {{ getCurrentUser().name }} </a></li>
+              <li ng-show="isLoggedIn()"><a href="/profile">Hello {{ getCurrentUser().name }} </a></li>
               <li class="dropdown" ng-show="isLoggedIn()" dropdown="">
                 <a href="#" dropdown-toggle="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-dashboard">&nbsp;</i>Account<b class="caret"></b>
                   </a>
                 <ul class="dropdown-menu" role="menu">
                   <li ng-show="isAdmin()" ng-class="{active: isActive('/people')}">
-                    <a href="/people"><i class="fa fa-truck">&nbsp;</i>People</a>
+                    <a href="/people"><i class="fa fa-truck">&nbsp;</i>Students/Employee</a>
                   </li>
                   <li ng-show="isAdmin()" ng-class="{active: isActive('/category')}">
-                    <a href="/category"><i class="fa fa-ticket">&nbsp;</i>Categories</a>
+                    <a href="/category"><i class="fa fa-ticket">&nbsp;</i>Domains</a>
                   </li>
-                  <li ng-show="isAdmin()" ng-class="{active: isActive('/brand')}">
-                    <a href="/brand"><i class="fa fa-tag">&nbsp;</i>Brands</a>
-                  </li>
+                  
                   <li ng-show="isAdmin()" ng-class="{active: isActive('/feature')}">
-                    <a href="/feature"><i class="fa fa-tag">&nbsp;</i>Features</a>
+                    <a href="/feature"><i class="fa fa-tag">&nbsp;</i>Technologies</a>
                   </li>
-                  <li ng-show="isAdmin()" ng-class="{active: isActive('/coupon')}">
-                    <a href="/coupon"><i class="fa fa-tag">&nbsp;</i>Coupons</a>
-                  </li>
-                  <li ng-show="isAdmin()" ng-class="{active: isActive('/order')}">
+                  
+                  <!--<li ng-show="isAdmin()" ng-class="{active: isActive('/order')}">
                     <a href="/order"><i class="fa fa-road">&nbsp;</i>Orders</a>
-                  </li>
+                  </li>-->
                   <li class="divider"></li>
-                  <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}">
-                    <a href="/admin"><i class="fa fa-user">&nbsp;</i>Shop Settings</a>
-                  </li>
+                  
                   <li ng-show="isAdmin()" ng-class="{active: isActive('/customer')}">
-                    <a href="/customer"><i class="fa fa-user">&nbsp;</i>Customers</a>
+                    <a href="/customer"><i class="fa fa-user">&nbsp;</i>Users</a>
                   </li>
-                  <li ng-show="isAdmin()" ng-class="{active: isActive('/paymentMethod')}">
+                 <!-- <li ng-show="isAdmin()" ng-class="{active: isActive('/paymentMethod')}">
                     <a href="/paymentMethod"><i class="fa fa-wrench">&nbsp;</i>Payment Method</a>
                   </li>
                   <li ng-show="isAdmin()" ng-class="{active: isActive('/shipping')}">
                     <a href="/shipping"><i class="fa fa-wrench">&nbsp;</i>Shipping Settings</a>
-                  </li>
+                  </li>-->
                   <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}">
                     <a href="" ng-click="logout()"><i class="fa fa-sign-out">&nbsp;</i>Logout</a>
                   </li>
@@ -158,7 +152,7 @@ _________________________________________________________ -->
         <div class="navbar-buttons">
 
            <div class="navbar-collapse collapse right" id="basket-overview">
-                <a class="btn btn-primary navbar-btn" ng-click="openCart(cart,'lg');" href=""><i class="fa fa-list">&nbsp;</i> <span class="hidden-sm">Shortlist ({{cart.getTotalCount()}}) <!--- {{cart.getTotalPrice() | currency:"$"}}--></span></a>
+                <a class="btn btn-primary navbar-btn" ng-click="openCart(cart,'lg');" href=""><i class="fa fa-list">&nbsp;</i> <span class="hidden-sm">Shortlist ({{cart.getTotalCount()}}) <!--- {{cart.gesctTotalPrice() | currency:"$"}}--></span></a>
             </div>
             <!--/.nav-collapse -->
 

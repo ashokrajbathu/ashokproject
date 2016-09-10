@@ -3,9 +3,8 @@
 angular.module('shopnxApp')
   .controller('ProductCtrl', function ($scope, socket, Product, Category, Brand, Feature, Modal, toastr) {
     var cols = [
-      {heading:'sku',dataType:'text', sortType:'lowercase'},
-      {heading:'name',dataType:'text', sortType:'lowercase'},
-      {heading:'info',dataType:'text', sortType:'lowercase'}
+      
+      {heading:'tecid',dataType:'text', sortType:'lowercase'}
     ];
     // var cols = ['sku','name','nameLower','slug','status','info','uid', 'active','img'];
     $scope.products = [];
@@ -32,7 +31,7 @@ angular.module('shopnxApp')
       socket.syncUpdates('brand', $scope.brands);
     });
     $scope.edit = function(product) {
-      var title; if(product.name){ title = 'Editing ' + product.name;} else{ title = 'Add New';}
+      var title; if(product.tecid){ title = 'Editing ' + product.tecid;} else{ title = 'Add New';}
       Modal.show(product,{title:title, api:'Product', columns: cols});
     };
     $scope.save = function(product){

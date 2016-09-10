@@ -3,10 +3,10 @@
 angular.module('shopnxApp')
   .config(function ($stateProvider) {
     $stateProvider
-      .state('cart', {
-        title: 'Details of items in your shopping cart',
-        url: '/cart',
-        templateUrl: 'app/cart/cart.html'
+      .state('shortlist', {
+        title: 'Details of people short listed',
+        url: '/shortlist',
+        templateUrl: 'app/shortlist/shortlist.html'
         // controller: 'CartCtrl'
       });
   });

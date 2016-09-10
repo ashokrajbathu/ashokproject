@@ -13,6 +13,7 @@ angular.module('shopnxApp')
   .factory('Product', ['$resource', function($resource) {
     var obj = {};
     obj = $resource('/api/products/:id', null, {'update': { method:'PUT' } });
+    //obj = $resource('/api/products/:tecid', null, {'update': { method:'PUT' } });
     obj.count = $resource('/api/products/count', null, {'update': { method:'PUT' }});
     return obj;
   }])

@@ -32,12 +32,18 @@ exports.index = function(req, res) {
     var sort = isJson(req.query.sort);
     var select = isJson(req.query.select);
 
-    Product.find(q).limit(req.query.limit).skip(req.query.skip).sort(sort).select(select).exec(function (err, products) {
-      if(err) { return handleError(res, err); }
-      //console.log(json(products));
+    var a = Product.find(q).limit(req.query.limit).skip(req.query.skip).sort(sort).select(select).populate('user');
+    //console.log(a);
+    var b = a.exec(function (err, products) {
+      
+      
+      if(err) { return handleError(res, err); 
+        console.log('username is %s', product.user.name)}
+      
       return res.status(200).json(products);
       //console.log("ashok");
     });
+
   }else{
     Product.find(function (err, products) {
       if(err) { return handleError(res, err); }
@@ -50,12 +56,21 @@ exports.index = function(req, res) {
 
 // Get a single product
 exports.show = function(req, res) {
-  Product.findById(req.params.id, function (err, product) {
+  Product.findById(req.params.id).populate('user').exec(function (err, product) {
     if(err) { return handleError(res, err); }
     if(!product) { return res.status(404).send('Not Found'); }
     return res.json(product);
   });
 };
+
+/* Get a single user taken tests
+exports.show = function(req, res) {
+  Product.findById(req.params.tecid).exec(function (err, product) {
+    if(err) { return handleError(res, err); }
+    if(!product) { return res.status(404).send('Not Found'); }
+    return res.json(product);
+  });
+};*/
 
 // Creates a new product in the DB.
 exports.create = function(req, res) {
