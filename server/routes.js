@@ -10,21 +10,28 @@ var path = require('path');
 module.exports = function(app) {
 
   // Insert routes below
-  app.use('/api/countries', require('./api/country'));
+ /* app.use('/api/countries', require('./api/country'));
   app.use('/api/shippings', require('./api/shipping'));
   app.use('/api/coupons', require('./api/coupon'));
   app.use('/api/features', require('./api/feature'));
   app.use('/api/PaymentMethods', require('./api/PaymentMethod'));
   app.use('/api/settings', require('./api/setting'));
-  app.use('/api/dashboard', require('./api/dashboard'));
-  app.use('/api/cart', require('./api/cart'));
+  
+  
   app.use('/api/invoices', require('./api/invoice'));
   app.use('/api/shop', require('./api/shop'));
   app.use('/api/brands', require('./api/brand'));
-  app.use('/api/category', require('./api/category'));
   app.use('/api/orders', require('./api/order'));
+
+  
+  app.use('/api/things', require('./api/thing'));*/
+
+  app.use('/api/category', require('./api/category'));
+  
+  app.use('/api/features', require('./api/feature'));
+  app.use('/api/dashboard', require('./api/dashboard'));
+  app.use('/api/cart', require('./api/cart'));
   app.use('/api/products', require('./api/product'));
-  app.use('/api/things', require('./api/thing'));
   app.use('/api/users', require('./api/user'));
 
   app.use('/auth', require('./auth'));
