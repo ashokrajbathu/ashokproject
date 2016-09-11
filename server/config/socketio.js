@@ -18,7 +18,7 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
-  require('../api/country/country.socket').register(socket);
+  /*require('../api/country/country.socket').register(socket);
   require('../api/shipping/shipping.socket').register(socket);
   require('../api/coupon/coupon.socket').register(socket);
   require('../api/feature/feature.socket').register(socket);
@@ -32,7 +32,7 @@ function onConnect(socket) {
   require('../api/order/order.socket').register(socket);
   require('../api/category/category.socket').register(socket);
   require('../api/product/product.socket').register(socket);
-  require('../api/thing/thing.socket').register(socket);
+  require('../api/thing/thing.socket').register(socket);*/
 }
 
 module.exports = function (socketio) {
